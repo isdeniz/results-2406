@@ -1,0 +1,239 @@
+,issue_label,issue_title,issue_body
+0,enhancement,Make the loading screen scale with browser window size,"Currently the loading wheel is a fixed size in pixels, but it would be better to specify it in terms of percentage of the browser size."
+1,bug,catAxisLabelPos and valAxisLabelPos options are not working,"Hi team ,
+I set the two options of `cataxislabelpos` and `valaxislabelpos`, but they didn't seem to work.Below is my code.
+
+![pptgenjs](https://user-images.githubusercontent.com/31813563/79113441-7f810000-7db3-11ea-81eb-27d2ce652e73.png)
+```
+let dataChartAreaLine = [
+	{
+		name: ""Actual Sales"",
+		labels: [""Jan"", ""Feb"", ""Mar"", ""Apr"", ""May"", ""Jun"", ""Jul"", ""Aug"", ""Sep"", ""Oct"", ""Nov"", ""Dec""],
+		values: [1500, 4600, 5156, 3167, 8510, 8009, 6006, 7855, 12102, 12789, 10123, 15121],
+	},
+	{
+		name: ""Projected Sales"",
+		labels: [""Jan"", ""Feb"", ""Mar"", ""Apr"", ""May"", ""Jun"", ""Jul"", ""Aug"", ""Sep"", ""Oct"", ""Nov"", ""Dec""],
+		values: [1000, 2600, 3456, 4567, 5010, 6009, 7006, 8855, 9102, 10789, 11123, 12121],
+	},
+];
+slide.addChart(""line"", dataChartAreaLine, { x: 1, y: 1, w: 8, h: 4, catAxisLabelPos: ""high"", valAxisLabelPos: ""high"" });
+```"
+2,enhancement,Add dependencies installer script,Add a script to install dependencies and integrate it with the CI.
+3,bug,iOS Build Configuration Release Fails,"I get these four fatal errors when building in Release mode but everything works great in Debug mode.
+
+/ios/Pods/Headers/Public/React-jsi/jsi/jsi.h:933:43: Use of undeclared identifier 'kindOf'
+
+/ios/Pods/Headers/Public/React-jsi/jsi/jsi.h:933:43: No matching function for call to 'kindOf'
+
+/ios/Pods/Headers/Public/React-jsi/jsi/jsi.h:934:5: Static_assert failed due to requirement 'std::is_base_of<facebook::jsi::Symbol, signed char &>::value || std::is_base_of<facebook::jsi::String, signed char &>::value || std::is_base_of<facebook::jsi::Object, signed char &>::value' ""Value cannot be implicitly move-constructed from this type""
+
+/ios/Pods/Headers/Public/React-jsi/jsi/jsi.h:939:26: Cannot allocate reference type 'signed char &' with new"
+4,enhancement,[all wcaro countries] Implement changes to the ECD tooltip to incorporate updated text and images,"We need to update one of the ECD tooltips in the app with new content and images.
+
+On the Early Childhood Development (ECD) task in the child home visit, for the `stim_skills` question, the info icon should be updated to include the revised text and images that you find in this document: https://docs.google.com/document/d/1RxZ3SFJXUerfEomdxw4gq6HKWoGCmwdAVr7o_pH9FJc/edit
+
+The English/French translations are added in the same document. Please ignore the French translations if they need to be added later in Transifex, which I can do myself.
+
+The accompanying images can be found in this folder: https://drive.google.com/drive/u/1/folders/1Ar4dPDAbaPv0jlL7Y_QwvIk05CiYpuCO"
+5,bug,Cursor isn't changed to ew-resize when resizing event,"Reproducible on a system with a touch screen in any browser (Edge, Chrome, Firefox)"
+6,enhancement,ui5-icon should work with message bundles from the actual icons package,"right now, the ui5-icon component is fetching translations from the main package like this:
+`fetchI18nBundle(""@ui5/webcomponents"");`
+
+this also means that the icons package contains a message bundle that no one uses, and the main package contains texts that do not belong there.
+
+this feature should include:
+- [ ] the icon component should load message bundles from the relevant icon package - example icon `tnt/workflow-editor` should look up texts from `@ui5/webcomponents/icons-tnt`
+- [x] the texts for icons should be removed from the main package"
+7,bug,Corruption after cached query with invalid syntax,"When a query with an invalid syntax is cached, a second run for this query causes memory corruption"
+8,enhancement,Feature Request: Add a way to go back to previous Meme,"## Feature:
+Sometimes people would like to revisit an old meme that they flew by in a hurry. To avoid this, we can add a temporary storage which will allow us to revisit the old memes as well as go ahead.
+
+## Tips:
+This can be easily achieved with help of caching or using any kind of dynamic data structure to hold onto some amount of previous memes you can come across.  "
+9,bug,Delete direct item - Wrong permissions,"## Form
+#### Requirements
+ - [x] I've searched the [Issues](https://github.com/dilame/instagram-private-api/issues)
+ - [x] I've read the [basic concepts](https://github.com/dilame/instagram-private-api#basic-concepts)
+ - [x] I'm using the latest version
+ - [ ] I've [debugged](https://github.com/dilame/instagram-private-api#debugging) my code using the `DEBUG` variable.
+#### Platform
+ - [x] I'm using Node.js version `14.17.0`
+ - [ ] I'm using electron
+ - [ ] I'm using the browser
+ - [ ] I'm using some other environment
+
+## Description
+
+**I'm trying to delete a direct item, but it gives me api error.**
+Please help me about it.
+
+## Code
+
+```js
+ig.entity.directThread(threadID).deleteItem(itemID).then(() =>{
+      return resolve(true);
+})
+```
+
+## Error and Output
+
+```
+IgResponseError: POST /api/v1/direct_v2/threads/{thread_id}/items/{item_id}/delete/ - 400 Bad Request; Wrong permissions
+```
+
+```
+at Request.handleResponseError ({path}/node_modules/instagram-private-api/dist/core/request.js:125:16)
+at Request.send ({path}/node_modules/instagram-private-api/dist/core/request.js:53:28)
+at async DirectThreadRepository.deleteItem ({path}/node_modules/instagram-private-api/dist/repositories/direct-thread.repository.js:185:26)
+
+```
+"
+10,bug,download.topo() failing on NOAA server,"`download.topo()` is failing today, as pointed out in https://github.com/ArgoCanada/argoFloats/issues/368, but the issue is not with `argoFloats`, I think, but rather with `oce::download.topo()` or, shall I say, with the NOAA server.  This has been failing for a couple of hours now.  If it is still failing tomorrow, I'll try looking on the NOAA site to see if they have changed the API, which they seem to do, every few months :-)"
+11,enhancement,Creating ROSpec from template file,"Wouldn't it make sense to do the ROSpec / antenna config / capabilities building from a template file and then load it via json.loads() at
+
+https://github.com/ransford/sllurp/blob/master/sllurp/llrp_proto.py#L2117
+https://github.com/ransford/sllurp/blob/master/sllurp/llrp_proto.py#L2161
+https://github.com/ransford/sllurp/blob/master/sllurp/llrp_proto.py#L2077
+
+It would save ~70+ lines and make it much more readable / configurable.
+"
+12,bug,multiprocessing start_method setup runtime exception,"**Describe the bug**
+
+The problem occurs when I try to build the bentoml service as below. 
+```
+# do normal bento pack & save
+python build_bentoservice.py
+```
+The problem occurs when using the bentoml master branch, and there is no problem in version 0.11.0.
+
+
+**To Reproduce**
+
+
+**Expected behavior**
+
+
+**Screenshots/Logs**
+
+```
+Traceback (most recent call last):
+  File ""/app/BentoML/bentoml/__init__.py"", line 40, in <module>
+    multiprocessing.set_start_method('fork')
+  File ""/usr/lib/python3.8/multiprocessing/context.py"", line 243, in set_start_method
+    raise RuntimeError('context has already been set')
+RuntimeError: context has already been set
+```
+
+**Environment:**
+ - OS
+```
+NAME=""Ubuntu""
+VERSION=""18.04.3 LTS (Bionic Beaver)""
+```
+ - Python Version : 3.8.3
+ - BentoML Version : master branch version (lastest commit aa120e4b8e8aaef8617f51be4a151122a9cd40f4)
+
+
+**Additional context**
+<!-- Add any other context about the problem here. e.g. links to related discussion. -->
+
+
+"
+13,enhancement,[Feature] Support plot_slice to show the parameter relationship.,"# Feature Request
+
+Porting `plot_slice()` to TypeScript.
+https://github.com/optuna/optuna/blob/v2.4.0/optuna/visualization/_slice.py
+"
+14,bug,fnHTTPClient fails after first request.,"1. Load /Networking/lightcycles.atr and press BREAK.
+2. NEW
+3. Enter the following program:
+```
+10 OPEN #1,4,0,""N:HTTP://FUJINET-TESTING.IRATA.ONLINE/LOREM.DOC""
+20 TRAP 40
+30 GET #1,A:? CHR$(A);:GOTO 30
+40 CLOSE #1:END
+```
+4. RUN
+5. Let program run.
+6. RUN again, nothing appears.
+
+The following debug information appears on console:
+```
+13:49:00.713 > CF: 71 4f 04 00 c4
+13:49:00.713 > sioNetwork::sio_process 0x4f 'O': 0x04, 0x00
+13:49:00.713 > sioNetwork::sio_open()
+13:49:00.713 >
+13:49:00.713 > ACK!
+13:49:00.713 > Deleting existing rateTimer
+13:49:00.713 >
+13:49:00.713 > <-SIO read 256 bytes
+13:49:00.736 > ACK!
+13:49:00.736 > sioNetwork::parseURL(N:HTTP://FUJINET-TESTING.IRATA.ONLINE/LOREM.DOC)
+13:49:00.736 > sioNetwork::parseURL transformed to (N:HTTP://FUJINET-TESTING.IRATA.ONLINE/LOREM.DOC, HTTP://FUJINET-TESTING.IRATA.ONLINE/LOREM.DOC)Parse and instantiate protocol: N:HTTP://FUJINET-TESTING.IRATA.ONLINE/LOREM.DOC
+13:49:00.739 > NetworkProtocol::ctor()
+13:49:00.739 > sioNetwork::open_protocol() - Protocol HTTP opened.
+13:49:00.739 > NetworkProtocolFS::resolve(/LOREM.DOC,/,LOREM.DOC)
+13:49:00.740 > Resolved to /LOREM.DOC
+13:49:00.740 > fnHttpClient::begin ""http://FUJINET-TESTING.IRATA.ONLINE:80/LOREM.DOC""
+13:49:00.742 > COMPLETE!
+13:49:00.742 > fnHttpClient::GET
+13:49:00.742 > 001869f0 _perform
+13:49:00.742 > 001869f1 _perform status = 0, length = 0, chunked = 0
+```
+
+Note the last line.
+
+What's happening here?
+
+-Thom
+"
+15,enhancement,Improve deposit copy,"Right now, it's very unclear what you have to do when the QR screen pops up.
+
+We should have a `Send X to the address below` in the UI."
+16,enhancement,Unify CloseHandleSafeHandle with SafeFileHandle,"For better interop with .NET BCL APIs, we should produce and accept instances of `SafeFileHandle` instead of our own `CloseHandleSafeHandle` generated type.
+
+This was astutely brought up here: https://github.com/dotnet/pinvoke/issues/429"
+17,bug,Intl.RelativeTimeFormat does not correctly reflect the spec,"**TypeScript Version:**
+3.9
+**Search Terms:**
+Intl.RelativeTimeFormat
+**Code**
+
+**Expected behavior:**
+
+**Actual behavior:**
+Reading through the lib2020.intl.d.ts I noticed a couple of issues in the declarations:
+1. Locale should not be `BCP47LanguageTag`, it should be `UnicodeBCP47LocaleIdentifier`.
+2. RelativeTimeFormat interface and const declaration should be combined into a single `class`.
+
+**Playground Link:** <!-- A link to a TypeScript Playground ""Share"" link which demonstrates this behavior -->
+
+**Related Issues:** <!-- Did you find other bugs that looked similar? -->
+"
+18,enhancement,Create a database that contains the candidates table,"**Body:**
+  **User Story**
+
+  * As a user, I can request a list of all potential candidates.
+
+  * As a user, I can request a single candidate's information.
+
+  * As a user, I want to delete a candidate.
+
+  * As a user, I want to create a candidate."
+19,bug,Location: 'NoneType' object has no attribute 'get',"```
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File ""/app/instagrapi/mixins/media.py"", line 241, in media_info
+    media = self.media_info_gql(media_pk)  # retry
+  File ""/app/instagrapi/mixins/media.py"", line 188, in media_info_gql
+    data[""shortcode_media""][""location""] = self.location_complete(
+  File ""/app/instagrapi/mixins/location.py"", line 69, in location_complete
+    info = self.location_info(location.pk)
+  File ""/app/instagrapi/mixins/location.py"", line 154, in location_info
+    return self.location_info_a1(location_pk)
+  File ""/app/instagrapi/mixins/location.py"", line 134, in location_info_a1
+    if not data.get(""location""):
+AttributeError: 'NoneType' object has no attribute 'get'
+```"
